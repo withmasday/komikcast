@@ -1,6 +1,11 @@
 import requests, re, os
 from bs4 import BeautifulSoup
 
+pathStore = './downloads'
+if not os.path.exists(pathStore):
+    os.makedirs(pathStore)
+else:pass
+
 BASE_URL = 'https://komikcast.lol/daftar-komik/?status=&type=&orderby=popular'
 
 def get_spesific_content(link, dirCreate):
